@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📚 Legal Chatbot
 
-## Getting Started
+## 🔄 Overview
+**Legal Chatbot** is an AI-powered multi-agent chatbot designed to retrieve and summarize legal information from Indian litigation and corporate law documents. It helps users get clear and concise answers by fetching data from legal PDFs and simplifying complex legal language.
 
-First, run the development server:
+## 🌐 Live Demo
+[Click here to use the chatbot](https://legal-chatbott.streamlit.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ⚖️ Features
+- ✅ **Multi-Agent System**: Uses a **Query Agent** to retrieve legal text and a **Summarization Agent** to simplify responses.
+- ✅ **Legal Document Search**: Fetches information from:
+  - *Guide to Litigation in India*
+  - *Legal Compliance & Corporate Laws*
+- ✅ **Web Interface**: Built using **Streamlit** for easy interaction.
+- ✅ **Accurate Responses**: Uses **FAISS for retrieval** and **GPT-based summarization**.
+- ✅ **Secure API Handling**: OpenAI API key is securely stored in Streamlit secrets.
+
+## 🔧 Tech Stack
+- **Python** – Core programming language
+- **LangChain & OpenAI API** – Query & Summarization Agents
+- **FAISS** – Fast retrieval of legal text
+- **PyPDF** – PDF text extraction
+- **Streamlit** – Web UI framework
+
+## 📁 Folder Structure
+```
+legal-chatbot/
+│── app.py                 # 🌟 Main Streamlit App
+│── requirements.txt        # 📀 Dependencies
+│── data/                   📂 Store PDFs here
+│   ├── Guide-to-Litigation-in-India.pdf
+│   ├── Legal-Compliance-Corporate-Laws.pdf
+│── utils/                  📂 Helper functions (Query & Summarization)
+│   ├── query_agent.py
+│   ├── summarization.py
+│── README.md               # 📚 Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Installation & Setup
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/shreeramdrao/Legal-Chatbot.git
+   cd Legal-Chatbot
+   ```
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the chatbot locally**:
+   ```bash
+   streamlit run app.py
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Deployment
+The chatbot is deployed using **Streamlit Cloud**. To deploy your own version:
+1. Push your repository to GitHub.
+2. Go to [Streamlit Cloud](https://share.streamlit.io/) and select your repo.
+3. Set the main file as `app.py` and deploy.
+4. Add the OpenAI API key under **Streamlit secrets**.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## ⚡ Future Enhancements
+- 📉 **Improve Legal Accuracy**: Fine-tune a **custom LLM** trained on Indian legal texts.
+- 📉 **Enhance UI**: Add **dropdown menus** for predefined legal topics.
+- 📉 **Expand Data Sources**: Integrate **more legal PDFs** for better coverage.
+- 📉 **Voice Support**: Allow **speech-to-text input** for accessibility.
+- 📉 **Authentication System**: Restrict access to legal professionals (if required).
 
-## Learn More
+## 📊 Contributing
+Feel free to submit **issues** or **pull requests** to improve the chatbot!
 
-To learn more about Next.js, take a look at the following resources:
+## 👤 Author
+Developed by **Shreerama D S**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
