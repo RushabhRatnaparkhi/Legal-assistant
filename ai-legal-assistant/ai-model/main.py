@@ -118,7 +118,7 @@ def smart_chunk_splitter(docs):
 async def preload_legal_documents():
     print("🔍 Preloading legal documents...")
     embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001",
+        model="models/gemini-embedding-001",
         google_api_key=GEMINI_API_KEY
     )
 
@@ -219,7 +219,7 @@ async def ask_from_uploaded(query: str = Form(...), file: UploadFile = None):
     save_path = os.path.join(VECTORSTORE_DIR, file_id)
 
     embeddings = GoogleGenerativeAIEmbeddings(
-        model="models/embedding-001",
+        model="models/gemini-embedding-001",
         google_api_key=GEMINI_API_KEY
     )
 
@@ -299,7 +299,7 @@ async def ask_from_context(query: str = Form(...), file_id: str = Form(...)):
         save_path = os.path.join(VECTORSTORE_DIR, file_id)
         if os.path.exists(save_path):
             embeddings = GoogleGenerativeAIEmbeddings(
-                model="models/embedding-001",
+                model="models/gemini-embedding-001",
                 google_api_key=GEMINI_API_KEY
             )
             vectorstore = FAISS.load_local(save_path, embeddings, allow_dangerous_deserialization=True)
